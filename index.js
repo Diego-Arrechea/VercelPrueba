@@ -5,8 +5,8 @@ const utils = require('./utils.js')
 require('dotenv').config(); // Carga las variables de entorno desde .env
 const NodeCache = require('node-cache');
 const { MongoClient } = require('mongodb');
-const mongoURI = process.env.MONGO_URI; // Utiliza la variable de entorno para la URI de MongoDB
-const dbName = process.env.DB_NAME; // Utiliza la variable de entorno para el nombre de la base de datos
+const mongoURI = process.env.MONGODB_URI; // Utiliza la variable de entorno para la URI de MongoDB
+const dbName = "Peliculas"; // Utiliza la variable de entorno para el nombre de la base de datos
 
 const app = express();
 // Configurar el motor de plantillas EJS
