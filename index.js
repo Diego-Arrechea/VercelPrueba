@@ -1,10 +1,10 @@
 const express = require("express");
 const path = require('path');
 const utils = require('./utils.js')
+const db = require('./public/js/db.js');
 require('dotenv').config(); // Carga las variables de entorno desde .env
 const NodeCache = require('node-cache');
 
-console.log(process.env.MONGO_URI)
 const app = express();
 // Configurar el motor de plantillas EJS
 app.set('view engine', 'ejs');
@@ -16,7 +16,8 @@ app.set("views", path.join(__dirname, "views"));
 const CacheReciente = new NodeCache({ stdTTL: 3600 });
 app.get('/', (req, res) => {
     const cachedData = CacheReciente.get('index');
-
+    res.send(process.env.MONGO_URI)
+    return
     if (cachedData) {
         res.render('index', cachedData);
     } else {
