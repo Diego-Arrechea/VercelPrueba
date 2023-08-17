@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require('path');
 const utils = require('./utils.js')
-const db = require('./public/js/db.js');
+//const db = require('./public/js/db.js');
 require('dotenv').config(); // Carga las variables de entorno desde .env
 const NodeCache = require('node-cache');
 
