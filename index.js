@@ -5,6 +5,9 @@ const app = express();
 // Configurar el motor de plantillas EJS
 app.set('view engine', 'ejs');
 
+// Configuración para servir archivos estáticos (HTML, CSS, JS, imágenes, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Middleware para analizar los datos enviados en el cuerpo de la solicitud
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
