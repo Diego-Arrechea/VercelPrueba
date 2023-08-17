@@ -12,6 +12,14 @@ app.get("/", (req, res) => {
     res.render(`header.ejs`);
 });
 
+// Manejador de errores personalizado
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).render('error', { mensaje: 'Error en el servidor.' }); // Renderizar la vista de error.ejs
+});
+
+
+
 app.listen(5000, () => {
     console.log("Running on port http://localhost:5000");
 });
