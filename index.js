@@ -19,17 +19,14 @@ app.get('/', (req, res) => {
     if (cachedData) {
         res.render('index', cachedData);
     } else {
+        const data = {
+            HTML_Recent_Movies: "",
+            HTML_Accion_Movies: "",
+            HTML_Comedia_Movies: ""
+        };
 
-        db.obtenerPeliculasIndex(8).then((Peliculas) => {
-            const data = {
-                HTML_Recent_Movies: utils.generarHTMLPeliculas(Peliculas.recientes, 4),
-                HTML_Accion_Movies: utils.generarHTMLPeliculas(Peliculas.accion, 4),
-                HTML_Comedia_Movies: utils.generarHTMLPeliculas(Peliculas.comedia, 4)
-            };
-
-            CacheReciente.set('index', data);
-            res.render('index', data);
-        })
+        CacheReciente.set('index', data);
+        res.render('index', data);
     }
 
 });

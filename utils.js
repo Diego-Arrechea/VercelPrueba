@@ -1,6 +1,5 @@
 function generarHTMLPelicula(index, nombrePelicula, añoPelicula, ratingPelicula, generosPelicula, imagenURL, enlaceURL, country) {
     const columnClass = index ? 'col-sm-5' : 'col-sm-4 col-md-5 col-lg-4';
-    console.log(country)
     const CountryHTML = country ? `<span style="color: #ACD7DE; font-size: 75%;">[${country.name.toUpperCase()}]</span>` : ''
     nombrePelicula = CountryHTML ? ` ${nombrePelicula}` : nombrePelicula
 
