@@ -1,8 +1,10 @@
 const express = require("express");
 const path = require('path');
 const utils = require('./utils.js')
+require('dotenv').config(); // Carga las variables de entorno desde .env
 const NodeCache = require('node-cache');
 
+console.log(process.env.MONGO_URI)
 const app = express();
 // Configurar el motor de plantillas EJS
 app.set('view engine', 'ejs');
