@@ -3,8 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send(`
-    <head>
+    res.send(`<head>
     <title>
         Titulo ashex
     </title>
@@ -57,8 +56,7 @@ app.get("/", (req, res) => {
         }
         </script>
     <script src="/js/launcher.js"></script>
-</head>
-  `;);
+</head>`);
 });
 
 app.listen(5000, () => {
